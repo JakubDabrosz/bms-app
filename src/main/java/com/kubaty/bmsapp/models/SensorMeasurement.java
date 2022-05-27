@@ -1,13 +1,11 @@
 package com.kubaty.bmsapp.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.BitSet;
+
 
 @Entity //Encja - odzwierciedlenie w klasy w bazie danych
+@Table(name="measurements")
 public class SensorMeasurement {
 
 
@@ -15,23 +13,23 @@ public class SensorMeasurement {
     @Id
     private Long id;
     private LocalDateTime measurementDate;
-    private double temperature;
-    private double humidity;
-    private double light;
-    private double co2;
-    private byte occuapncy;
+    private Double temperature;
+    private Double humidity;
+    private Double light;
+    private Double co2;
+    private Boolean occupancy;
 
     public SensorMeasurement() {
     }
 
-    public SensorMeasurement(Long id, LocalDateTime measurementDate, double temperature, double humidity, double light, double co2, byte occuapncy) {
+    public SensorMeasurement(Long id, LocalDateTime measurementDate, Double temperature, Double humidity, Double light, Double co2, Boolean occupancy) {
         this.id = id;
         this.measurementDate = measurementDate;
         this.temperature = temperature;
         this.humidity = humidity;
         this.light = light;
         this.co2 = co2;
-        this.occuapncy = occuapncy;
+        this.occupancy = occupancy;
     }
 
     public Long getId() {

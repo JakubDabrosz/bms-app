@@ -19,7 +19,6 @@ public class SensorMeasurementController {
     public String getMeasurements(Model model) {
 
         Iterable<SensorMeasurement> sensorMeasurementList = sensorMeasurementService.findAll();
-
         model.addAttribute("measurements", sensorMeasurementList);
         return "measurement";
     }

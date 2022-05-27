@@ -151,10 +151,17 @@
 
       <!-- Left side columns -->
       <div class="col-lg-8">
-        <div class="row">
-          asd xd
+        <div class="container">
 
-
+            <h2> Measurement List </h2>
+            <table class = "table table-striped">
+              <tr>
+                <th> Measurement </th>
+              </tr>
+              <tr th:each="measurements : ${measurements}">
+                <td th:text="${measurements.measurementDate}"></td>
+              </tr>
+            </table>
         </div>
       </div><!-- End Left side columns -->
 
